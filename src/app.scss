@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ca727221;
+        padding: 50px 50px;
+
+        h1 {
+            font-size: 30px;
+        }
+
+        input {
+            padding: 8px;
+            width: 70%;
+            margin: 20px 12px 0 0;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            font-size: 20px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        button {
+            font-weight: 600;
+            padding: 8px;
+            background-color: #ec97db;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        select {
+
+            padding: 8px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+            text-transform: capitalize;
+
+            &:focus {
+                outline: none;
+            }
+
+
+        }
+
+        ul {
+            margin-top: 20px;
+
+
+            li {
+                position: relative;
+                padding: 5px 20px;
+                list-style-type: none;
+               
+                font-size: 20px;
+
+                &.completed {
+                    opacity: .5;
+                }
+
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    background-color: #ec97db;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 0;
+                    transform: translateY(-50%);
+                }
+
+                span {
+                    width: 25px;
+                    height: auto;
+                    display: inline-block;
+                    background: #fff;
+                    margin: 5px;
+                    border-radius: 5px;
+                    text-align: center;
+                    cursor: pointer;
+
+                    &.item-text {
+                        width: 80%;
+                        text-align: left;
+                        background: transparent;
+                        cursor: initial ;
+                    }
+
+                    img {
+                        width: 75%;
+                        height: auto;
+                    }
+
+                }
+
+            }
+        }
+    }
+}
