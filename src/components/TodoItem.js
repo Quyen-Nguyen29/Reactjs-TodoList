@@ -1,36 +1,14 @@
-function TodoItem({ item, todos, setTodos }) {
+import {StatusCompleted,StatusUnCompleted} from './../constants/const'
 
-    const handlingCompletedItem = () => {
-        
-        setTodos(
-            todos.map((element => {
-                if (element.id === item.id) {
-                    return (
-                        { ...item, completed: !item.completed }
-                    )
-                }
-                return element;
-            }))
-        )
-
-    }
-
-    // [{text:"", completed: true, id:1}]
-
-    const handlingDeleteItem = () => {
-
-        setTodos(todos.filter(element => element.id !== item.id)) //set lại mảng todos chỉ chứa những item khác item.id
-
-
-    }
+function TodoItem({ todo, handlingDeletingTodoItem, togglingTodoItemStatus, setTodo }) {
 
     return (
 
-        <li className={`${item.completed ? 'completed' : ''}`}>
-            <span className="item-text" >{item.text}</span>
-            <span className="complete-btn" onClick={handlingCompletedItem} ><img src="./assets/images/icon-complete.png" alt="icon complete" /></span >
-
-            <span className="delete-btn" onClick={handlingDeleteItem} ><img src="./assets/images/icon-delete.png" alt="icon delete" /></span>
+        <li className={`${todo.status===StatusCompleted ? "completed" : ""}`}>
+            <span className="item-text" >{todo.text}</span>
+            <span className="complete-btn" onClick={() => togglingTodoItemStatus(todo.id)}  ><img src="./assets/images/icon-complete.png" alt="icon complete" /></span >
+            <span className="delete-btn" onClick={() => handlingDeletingTodoItem(todo.id)} ><img src="./assets/images/icon-delete.png" alt="icon delete" /></span>
+            <span className="edit-btn" onClick={() => setTodo(todo)}  >Edit</span>
         </li>
 
     );

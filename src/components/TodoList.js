@@ -1,20 +1,29 @@
 import TodoItem from '../components/TodoItem';
 
 
-function TodoList({ todos, setTodos,filterItems  }) {
-
+function TodoList({ todos, handlingDeletingTodoItem, togglingTodoItemStatus, handlingEditTodoItem, setTodo }) {
 
     return (
 
-        <ul >
+        <ul   >
             {
-                filterItems.map((item) => {
-                    return (
-                        <TodoItem key={item.id} item={item} todos={todos} setTodos={setTodos} />
+                todos.map((todo) => {
+                    return todo.isShow && (
+                        <TodoItem key={todo.id} todo={todo}
+                            setTodo={setTodo}
+                            handlingDeletingTodoItem={handlingDeletingTodoItem}
+                            togglingTodoItemStatus={togglingTodoItemStatus}
+                       
+                        />
+
                     )
                 })
+
             }
         </ul>
+
+
+
 
     );
 }

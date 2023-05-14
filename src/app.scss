@@ -22,10 +22,22 @@
             font-size: 30px;
         }
 
+        .group-form {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+
+            .input-form {
+                width: 90%;
+            }
+
+        }
+
         input {
             padding: 8px;
             width: 70%;
-            margin: 20px 12px 0 0;
+            margin: 0 12px 0 0;
             border-radius: 5px;
             border: 1px solid #fff;
             font-size: 20px;
@@ -68,7 +80,7 @@
                 position: relative;
                 padding: 5px 20px;
                 list-style-type: none;
-               
+
                 font-size: 20px;
 
                 &.completed {
@@ -102,12 +114,17 @@
                         width: 80%;
                         text-align: left;
                         background: transparent;
-                        cursor: initial ;
+                        cursor: initial;
                     }
 
                     img {
                         width: 75%;
                         height: auto;
+                    }
+
+                    &.edit-btn {
+                        width: fit-content;
+                        padding-inline: 5px;
                     }
 
                 }
